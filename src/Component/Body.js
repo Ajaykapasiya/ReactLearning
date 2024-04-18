@@ -1,46 +1,37 @@
 import RestaurantCard from "./RestaurantCard";
-
+import {useState , useEffect} from "react";
+import resList from "../utils/MockData";
 
 const Body = () => {
 
-    let listOfRestaurants = [
-        {
-        "info": {
-            "id": "89563",
-            "name": "UBQ by Barbeque Nation",
-            "cloudinaryImageId": "eb282mtpbn1f2fnamwgs",
-            "costForTwo": "₹300 for two",
-            "cuisines": ["Barbecue", "Biryani", "Kebabs", "Mughlai", "Desserts"],
-            "avgRating": 6,
-            "deliveryTime": 30,
-        },
-    },
+    const [ listOfRestaurants , setListOfRestaurant] = useState(resList);
 
-        {
-            "info": {
-                "id": "89562",
-                "name": "UBQ by Barbeque Nation - 2 - new",
-                "cloudinaryImageId": "eb282mtpbn1f2fnamwgs",
-                "costForTwo": "₹300 for two",
-                "cuisines": ["Barbecue", "Biryani", "Kebabs", "Mughlai", "Desserts"],
-                "avgRating": 4.3,
-                "deliveryTime": 30
-            }
-        },
+    useEffect(() => {
+        console.log("render useEffect");
+        fetchData();
+    }, []);
 
+const fetchData = async () =>{
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.549754696396924&lng=77.36122253202448&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    console.log(json);
+    setListOfRestaurant(json.data.cards[12].card.card);
 
-    ];
+};
+
 
     return (<div className="body">
         <div className="filter">
             <button className="filter-btn"
                     onClick={() => {
 
-                        listOfRestaurants = listOfRestaurants.filter(
-                            (res) => res.info.avgRating > 4);
+                       const filteredList = listOfRestaurants.filter(
+                            (res) => res.info.avgRating > 4
+                       );
 
 
-                        console.log(listOfRestaurants);
+                        setListOfRestaurant(filteredList);
                     }}>
                 Top rated restaurants
 
