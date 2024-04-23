@@ -1,3 +1,4 @@
+
 const Shimmer = () => {
     return(
         <div className="Shimmer-container">
@@ -26,3 +27,5 @@ const Shimmer = () => {
     );
 };
 export default Shimmer;
+
+
