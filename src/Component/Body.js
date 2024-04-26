@@ -1,7 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
 import {useEffect, useState} from "react";
-
-import shimmer from "./Shimmer";
 import Shimmer from "./Shimmer";
 
 
@@ -9,7 +7,6 @@ const Body = () => {
 
     const [listOfRestaurants, setListOfRestaurant] = useState([]);
     const [filteredrestaurants, setFilteredrestaurants] = useState([]);
-
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
@@ -42,7 +39,7 @@ const Body = () => {
                     onClick={() => {
                         console.log(searchText);
 
-                        const filteredRestaurant = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                        const filteredRestaurants = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
 
                         setFilteredrestaurants(filteredRestaurant);
                     }}
