@@ -11,7 +11,7 @@ const AppLayout = () =>{
     return (
         <div className="App">
             <Header/>
-            <body/>
+
             <Outlet/>
         </div>
 
