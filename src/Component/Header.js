@@ -15,20 +15,18 @@ const Header = () => {
         </div>
         <div className={"nav-item"}>
             <ul>
-                <li><Link to = "/">Home</Link>
+                <li><Link to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to = "/About">About us</Link></li>
+                    <Link to="/About">About us</Link></li>
                 <li>
-                    <Link to = "/contact">contact</Link>
-                    </li>
+                    <Link to="/contact">contact</Link>
+                </li>
                 <li>Cart</li>
                 <button
                     className="btn"
                     onClick={() => {
-                        btnNameReact === "Login"
-                            ? setBtnNameReact("Logout") :
-                            setBtnNameReact("Login");
+                        btnNameReact === "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login");
 
                     }}
                 >
