@@ -8,7 +8,7 @@ const Header = () => {
     //let btnName = "Login"
     const [btnNameReact, setBtnNameReact] = useState("Login");
 
-    return (<div className={"header"}>
+    return <div className={"header"}>
         <div className={"logo-container"}>
             <img className={"logo"}
                  src="https://marketplace.canva.com/EAFYecj_1Sc/1/0/1600w/canva-cream-and-black-simple-elegant-catering-food-logo-2LPev1tJbrg.jpg"/>
@@ -36,7 +36,7 @@ const Header = () => {
         </div>
 
 
-    </div>)
+    </div>
 }
 
 export default Header;
