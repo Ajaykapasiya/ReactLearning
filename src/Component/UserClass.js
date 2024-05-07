@@ -10,7 +10,13 @@ class UserClass extends React.Component {
 
         this.state = {
             count: 0
-        }
+        };
+    }
+      async componentDidMount()
+    {
+const data = await fetch("https://api.github.com/users/Ajaykapasiya")
+        const json = await data.json();
+        console.log  (json);
     }
 
     render() {
