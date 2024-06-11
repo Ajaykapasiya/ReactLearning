@@ -121,6 +121,15 @@ h4 {
     cursor: pointer;
 }
 
+/* Define CSS variables for dynamic properties */
+:root {
+    --card-width: 300px;
+    --card-height: 300px;
+    --card-background-color: #f3f3f3;
+    --card-border-radius: 8px;
+    --card-margin: 10px;
+}
+
 /* Shimmer container */
 .Shimmer-container {
     display: flex;
@@ -130,14 +139,15 @@ h4 {
 
 /* Shimmer card */
 .shimmer.card {
-    width: 300px; /* Adjust width as needed */
-    height: 300px; /* Adjust height as needed */
-    background-color: #f3f3f3; /* Light gray background color */
-    border-radius: 8px; /* Rounded corners */
-    margin: 10px; /* Spacing between cards */
+    width: var(--card-width); /* Use CSS variable for width */
+    height: var(--card-height); /* Use CSS variable for height */
+    background-color: var(--card-background-color); /* Use CSS variable for background color */
+    border-radius: var(--card-border-radius); /* Use CSS variable for border radius */
+    margin: var(--card-margin); /* Use CSS variable for margin */
     position: relative; /* Allows absolute positioning of shimmer effect */
     overflow: hidden; /* Ensures shimmer effect does not overflow */
 }
+
 
 /* Shimmer effect */
 .shimmer::before {
