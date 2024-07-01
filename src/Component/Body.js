@@ -10,7 +10,7 @@ const Body = () => {
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
-        console.log("render")
+        console.log("render" , listOfRestaurants)
         fetchData();
     }, []);
 
