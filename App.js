@@ -8,7 +8,7 @@ import Contact from "./src/Component/Contact";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {Outlet} from "react-router-dom";
 import RestaurantCard from "./src/Component/RestaurantCard";
-
+import {withProvider} from "@reduxjs/toolkit/src/tests/utils/helpers";
 
 const AppLayout = () => {
     return (
